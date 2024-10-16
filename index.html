@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alojamientos Universitarios</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="pagina">
+
+	<header>
+		<nav>
+			<div class="barra-navegacion">
+				<div class="logo">
+					<a href="index.html">
+					<img src="birrete.png" class="imagen-logo" alt="imagen logo de alojamiento universitario">
+					</a>
+				</div>
+				<a href="index.html" class="nombre-inicio">Alojamientos Universitarios</a>
+
+				<button class="search-boton" id="search-boton" type="button" onclick="toggleDatos()">Buscar</button>
+
+				<div class="busqueda-movil" id="busqueda-movil">
+					<form action="resultado.html" method="GET">
+					<div class="filtro-1" id="filtro-1">
+						<label for="precio">Precio:</label><br>
+						<input type="text" id="precio" name="precio">
+					</div>
+					<div class="filtro-2" id="filtro-2">
+						<label for="ubicacion">Ubicación:</label><br>
+						<input type="text" id="ubicacion" name="ubicacion">
+					</div>
+					<div class="filtro-3" id="filtro-3">
+						<p>Características:</p>
+						<div class="caract-wifi">
+							<input type="checkbox" id="wifi" name="caracteristica" value="wifi">
+							<label for="wifi">Con Wifi</label>
+						</div>
+						<div class="caract-aire">
+							<input type="checkbox" id="aire-acondicionado" name="caracteristica" value="aire-acondicionado">
+							<label for="aire-acondicionado">Con Aire Acondicionado</label>
+						</div>
+						<div class="caract-amueblado">
+							<input type="checkbox" id="amueblado" name="caracteristica" value="amueblado">
+							<label for="amueblado">Amueblado</label>
+						</div>
+						<div class="caract-estaciona">
+							<input type="checkbox" id="estacionamiento" name="caracteristica" value="estacionamiento">
+							<label for="estacionamiento">Con Estacionamiento</label>
+						</div>
+						<div class="caract-depa">
+							<input type="checkbox" id="departamento" name="caracteristica" value="departamento">
+							<label for="departamento">Departamento</label>
+						</div>
+						<div class="caract-casa">
+							<input type="checkbox" id="casa-compartida" name="caracteristica" value="casa-compartida">
+							<label for="casa-compartida">Casa Compartida</label>
+						</div>
+					</div>
+					<div class="boton">
+						<button type="submit" class="boton-buscar">Buscar</button>
+					</div>
+				</form>
+				</div>
+				<div class="boton-modal">
+					<label for="btn-modal">
+						<img src="signo.png" class="signo">
+					</label>
+				</div>
+				<input type="checkbox" id="btn-modal">
+				<div class="container-modal">
+					<div class="content-modal">
+						<h2><b>Preguntas Frecuentes</b></h2>
+						<div class="preg-1">
+							<h4>¿Quién puede vivir en nuestras residencias?</h4>
+							<p>Se ofrece alojamiento para estudiantes de todos los géneros y nacionalidades inscriptos en cualquier curso de educación superior y para toda la comunidad académica</p>
+						</div>
+						<div class="preg-2">
+							<h4>¿Qué ocurre si no me gusta mi habitación?</h4>
+							<p>Puedes pedir un cambio de habitación al director de la residencia, que hará todo lo posible para encontrar una habitación que sea de tu gusto. Sin embargo, ten en cuenta que los precios de las habitaciones pueden cambiar en función a su tamaño, localización en el edificio, disponibilidad y tiempo de estancia.</p>
+						</div>
+						<div class="preg-3">
+							<h4>¿Puedo entrar en la habitación antes de tiempo?</h4>
+							<p>Sí, si la habitación está disponible. Se cobrará un cargo adicional por día extra. Por favor, ponte en contacto con el personal de la residencia si deseas entrar antes de tiempo. Igualmente podrás extender más días del periodo inicial contratado siguiendo el mismo trámite.</p>
+						</div>
+						<div class="preg-4">
+							<h4>¿Puedo tener invitados?</h4>
+							<p>Puedes tener visitas, simplemente tendrán que registrarse en la recepción a la entrada y a la salida. Sin embargo, si tu visita necesita quedarse a dormir, tendrás que consultarlo antes con alguien del equipo de la residencia y hacer la reserva oportuna, bien sea en tu habitación o necesite una habitación adicional. Recuerda que los residentes tienen tarifas especiales para este tipo de visitas.</p>
+						</div>
+						<div class="preg-5">
+							<h4>¿Hay algún descuento para reservas de grupo?</h4>
+							<p>Se ofrecen tarifas especiales para grupos según sus necesidades, servicios y tiempo de estancia. Además tenemos promociones y ofertas puntuales que pueden ser de interés para grupos.</p>
+						</div>
+						<div class="preg-6">
+							<h4>¿Puedo cancelar mi reserva?</h4>
+							<p>Las condiciones de cancelación de reserva y política de devolución del dinero vienen detalladas desde el inicio del proceso de reserva en los términos y condiciones de reserva. Si tienes alguna duda para cancelar tu reserva y/o optar a la devolución del dinero, ponte en contacto con el personal de la residencia.En cualquier caso, deberás mandar un email a la residencia notificando la cancelación de la misma y enviando el justificante correspondiente al correo de la residencia.</p>
+						</div>
+						<div class="btn-cerrar">
+							<label for="btn-modal">Cerrar</label>
+						</div>
+					</div>
+					<label for="btn-modal" class="cerrar-modal"></label>
+				</div>
+			</div>
+
+		</nav>
+	</header>
+
+
+
+	<div class="cuerpo">
+		<div class="contenido-1">
+			<div class="busqueda" id="busqueda">
+				<form action="resultado.html" method="GET">
+					<div class="filtro-1" id="filtro-1">
+						<label for="precio">Precio:</label><br>
+						<input type="text" id="precio" name="precio">
+					</div>
+					<div class="filtro-2" id="filtro-2">
+						<label for="ubicacion">Ubicación:</label><br>
+						<input type="text" id="ubicacion" name="ubicacion">
+					</div>
+					<div class="filtro-3" id="filtro-3">
+						<p>Características:</p>
+						<div class="caract-wifi">
+							<input type="checkbox" id="wifi" name="caracteristica" value="wifi">
+							<label for="wifi">Con Wifi</label>
+						</div>
+						<div class="caract-aire">
+							<input type="checkbox" id="aire-acondicionado" name="caracteristica" value="aire-acondicionado">
+							<label for="aire-acondicionado">Con Aire Acondicionado</label>
+						</div>
+						<div class="caract-amueblado">
+							<input type="checkbox" id="amueblado" name="caracteristica" value="amueblado">
+							<label for="amueblado">Amueblado</label>
+						</div>
+						<div class="caract-estaciona">
+							<input type="checkbox" id="estacionamiento" name="caracteristica" value="estacionamiento">
+							<label for="estacionamiento">Con Estacionamiento</label>
+						</div>
+						<div class="caract-depa">
+							<input type="checkbox" id="departamento" name="caracteristica" value="departamento">
+							<label for="departamento">Departamento</label>
+						</div>
+						<div class="caract-casa">
+							<input type="checkbox" id="casa-compartida" name="caracteristica" value="casa-compartida">
+							<label for="casa-compartida">Casa Compartida</label>
+						</div>
+					</div>
+					<div class="boton">
+						<button type="submit" class="boton-buscar">Buscar</button>
+					</div>
+				</form>
+			</div>
+			<div class="imagen-principal" id="imagen-principal">
+				<img src="alojamiento.png" alt="Alojamiento Universitario" class="imagen-inicio" id="imagen-inicio" alt="imagen de alojamiento universitario">
+			</div>
+			<div class="imagen-muñeco" id="imagen-muñeco">
+				<img src="muñeco1.png" class="muñeco" id="muñeco" alt="muñeco blanco con lupa">
+			</div>
+		</div>
+
+		<div class="contenido-2">
+			<div class="mapa-google">
+				<div class="disponibilidad">
+					<h2>Nuestras Disponibilidades</h2>
+				</div>
+				<div id="mapa" style="height: 400px; width: 400px;"></div>
+				<script src="comportamiento.js"></script>
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqroW-f5S3kd3tVTXU7CBo4YOk3Q8xsYs&callback=initMap"></script>
+
+			</div>
+			<section class="product">
+				<h2 class="product-category">Alojamientos Disponibles</h2>
+				<button class="pre-btn" id="pre-btn"><img src="flecha.png" class="flecha" alt=""></button>
+				
+				<div class="product-container" id="product-container">
+					<div class="product-card">
+						<div class="product-image">
+							<span class="discount-tag">Disponible</span>
+							<img src="palo-alto.jpg" class="product-thumb" alt="">
+							<a href="palo-alto.html"><button class="card-btn">Ver Alojamiento</button></a>
+						</div>
+						<div class="product-info">
+							<h2 class="product-brand">Palo Alto Student House</h2>
+							
+							<span class="price">$10000</span>
+						</div>
+					</div>
+					<div class="product-card">
+						<div class="product-image">
+							<span class="discount-tag">Disponible</span>
+							<img src="casarica.jpg" class="product-thumb" alt="">
+							<button class="card-btn">Ver Alojamiento</button>
+						</div>
+						<div class="product-info">
+							<h2 class="product-brand">Casarica Coliving Obelisco</h2>
+							
+							<span class="price">$12500</span>
+						</div>
+					</div>
+					<div class="product-card">
+						<div class="product-image">
+							<span class="discount-tag">Disponible</span>
+							<img src="olivia.jpg" class="product-thumb" alt="">
+							<button class="card-btn">Ver Alojamiento</button>
+						</div>
+						<div class="product-info">
+							<h2 class="product-brand">Residencia Universitaria Olivia</h2>
+							
+							<span class="price">$8500</span>
+						</div>
+					</div>
+					<div class="product-card">
+						<div class="product-image">
+							<span class="discount-tag">Disponible</span>
+							<img src="jcf.jpg" class="product-thumb" alt="">
+							<button class="card-btn">Ver Alojamiento</button>
+						</div>
+						<div class="product-info">
+							<h2 class="product-brand">JCF Residence</h2>
+							
+							<span class="price">$9000</span>
+						</div>
+					</div>
+					<div class="product-card">
+						<div class="product-image">
+							<span class="discount-tag">Disponible</span>
+							<img src="coeli.jpg" class="product-thumb" alt="">
+							<button class="card-btn">Ver Alojamiento</button>
+						</div>
+						<div class="product-info">
+							<h2 class="product-brand">Residencia Scala Coeli</h2>
+							
+							<span class="price">$7850</span>
+						</div>
+					</div>
+					<div class="product-card">
+						<div class="product-image">
+							<span class="discount-tag">Disponible</span>
+							<img src="gusti.jpg" class="product-thumb" alt="">
+							<button class="card-btn">Ver Alojamiento</button>
+						</div>
+						<div class="product-info">
+							<h2 class="product-brand">Residencia Univ. Gusti</h2>
+							
+							<span class="price">$15650</span>
+						</div>
+					</div>
+				</div>
+				<button class="next-btn" id="next-btn"><img src="flecha.png" class="flecha" alt=""></button>
+			</section>
+			<script src="busqueda.js"></script>
+		</div>
+
+	</div>
+
+
+<footer class="footer">
+	<div class="info-contacto">
+        <h3 class="contacto"><b>Contacto</b></h3>
+        <p class="mail">Email: contacto@alojamientosuni.com</p>
+        <p class="cel">Teléfono: +123456789</p>
+    </div>
+</footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="comportamiento.js"></script>
+</body>
+</html>
